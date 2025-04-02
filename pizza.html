@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piza website</title>
+    <link rel="stylesheet" href="pizza.css">
+</head>
+<body>
+    <div class="con">
+
+        <header>
+            <h1>🍕Pizza pickup tracker</h1>
+            <p>Order your pizza and track it in real-time</p>
+        </header>
+
+        <div class="order-section" id="orderSection">
+            <h2 class="section-title">Create your order</h2>
+
+            <div class="pizza-form">
+                <div>
+                    <div class="form-group">
+                        <label for="pizzaSize">Pizza size</label>
+                        <select name="pizzaSize" id="pizzaSize">
+                            <option value="small">Small (10")</option>
+                            <option value="medium">Medium (12")</option>
+                            <option value="large">Large(14")</option>
+                            <option value="xlarg">Extra Large (16")</option>
+                        </select>
+                    </div><!--form group-->
+
+                    <div class="form-group">
+                        <label for="crustType">Crust type</label>
+                        <select name="crustType" id="crustType">
+                            <option value="thin">Thin Crust</option>
+                            <option value="regular">Regular crust</option>
+                            <option value="thick"> Thick crust</option>
+                            <option value="stuffed">Stuffed Crust</option>
+                        </select>
+                    </div><!--form group2-->
+
+                    <div class="form-group">
+                        <label for="toppings">Crust type</label>
+                        <select name="toppings" id="toppings" multiple size="4">
+                            <option value="pepperoni">pepperoni</option>
+                            <option value="mushrooms">Mushrooms</option>
+                            <option value="onions"> Onions</option>
+                            <option value="sausage"> Sausage</option>
+                            <option value="bacon">Bacon</option>
+                            <option value="xcheese">Extra Cheese</option>
+                            <option value="peppers">Bell Peppers</option>
+                            <option value="olives">Olives</option>
+                        </select>
+                    </div><!--form group3-->
+
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" placeholder="John Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Numbers</label>
+                        <input type="tel" id="phone" placeholder="000-000-0000">
+                    </div>
+
+                   
+
+                </div> <!--random div-->
+            </div> <!--div for pizza form-->
+
+            <div class="order-summary">
+                <div class="summary-title">Order Summary</div>
+                <div class="summary-item">
+                    <span>Medium(12") Regular Crust Pizza</span>
+                    <span>$12.99</span>
+                </div>
+                <div class="summary-item">
+                    <span>Slected toppings (0)</span>
+                    <span>$0.00</span>
+                </div>
+                <div class="summary-total">
+                    total:$12.99
+                </div>
+            </div> <!--order summary-->
+            <div class="button-container">
+                <button id="placeOrderBtn">Place Order</button>
+            </div><!--Button container-->
+
+        </div> <!--div for order section-->
+
+        <div class="tracker-section" id="trackerSection">
+            <h2 class="section-title">Track you order</h2>
+            <div class="progress-bar-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-steps">
+                    <div class="progress-step active" id="step1">1
+                        <span class="step-label">Order Received</span>
+                    </div>
+                    <div class="progress-step" id="step2">2
+                        <span class="step-label">Preparing</span>
+                    </div>
+                    <div class="progress-step" id="step3">3
+                        <span class="step-label">In the Oven</span>
+                    </div>
+                    <div class="progress-step" id="step4">4
+                        <span class="step-label">Quality check</span>
+                    </div>
+                    <div class="progress-step" id="step5">5
+                        <span class="step-label">Ready for pickups</span>
+                    </div>
+                </div><!--progress steps-->
+            </div> <!--progress bar container-->
+
+            <div class="delivery-info">
+                <div class="delivery-detail">
+                    <div class="detail-label">Ready In</div>
+                    <div class="detail-value" id="estimatedTime">--:--</div>
+                </div>
+
+                <div class="delivery-detail">
+                    <div class="detail-label">Current Status</div>
+                    <div class="detail-value" id="currentStatus">Order Received</div>
+                </div>
+
+                <div class="delivery-detail">
+                    <div class="detail-label">Order Number</div>
+                    <div class="detail-value" id="orderNumber">#12345</div>
+                </div>
+            </div>
+
+            <div class="status-updates">
+                <div class="status-title">Order List</div>
+                <div class="update-list" id="updateList">
+
+                </div>
+            </div>
+
+            <div>
+                <button id="newOrderBtn">Place Another Order</button>
+                <button id="pickedUpBtn" style="background-color: var(--accent-color);display: none;">Mark as Picked up</button>
+            </div>
+            <div class="notification" id="notification">Your Order has been placed</div>
+        </div><!--tracker section-->
+
+    </div> <!--div for container-->
+    <script src="pizza.js"></script>
+</body>
+</html>
